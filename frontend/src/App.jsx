@@ -9,6 +9,7 @@ import ChatPage from "./pages/ChatPage.jsx";
 import SearchPage from "./pages/SearchPage.jsx";
 import EditProfilePage from "./pages/EditProfilePage.jsx";
 import AdminPage from "./pages/AdminPage.jsx";
+import GroupsPage from "./pages/GroupsPage.jsx";
 import { Toaster } from "react-hot-toast";
 import Layout from "./components/Layout.jsx";
 
@@ -120,6 +121,18 @@ const App = () => {
           }
         />
         <Route
+          path="/groups"
+          element={
+            isAuthenticated && isOnboarded ? (
+              <Layout showSidebar={true}>
+                <GroupsPage />
+              </Layout>
+            ) : (
+              <Navigate to={!isAuthenticated ? "/login" : "/onboarding"} />
+            )
+          }
+        />
+        <Route
           path="/onboarding"
           element={
             isAuthenticated ? (
@@ -135,6 +148,18 @@ const App = () => {
         />
         <Route
           path="/chat/:id"
+          element={
+            isAuthenticated && isOnboarded ? (
+              <Layout showSidebar={false}>
+                <ChatPage />
+              </Layout>
+            ) : (
+              <Navigate to={!isAuthenticated ? "login" : "onboarding"} />
+            )
+          }
+        />
+        <Route
+          path="/chat/group/:groupId"
           element={
             isAuthenticated && isOnboarded ? (
               <Layout showSidebar={false}>

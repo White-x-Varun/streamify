@@ -98,3 +98,44 @@ export const blockUser = async (userId) => {
   const res = await axiosInstance.post(`/users/block/${userId}`);
   return res.data;
 };
+
+// Group API functions
+export const createGroup = async (groupData) => {
+  const res = await axiosInstance.post("/groups", groupData);
+  return res.data;
+};
+
+export const getUserGroups = async () => {
+  const res = await axiosInstance.get("/groups");
+  return res.data;
+};
+
+export const getGroupById = async (groupId) => {
+  const res = await axiosInstance.get(`/groups/${groupId}`);
+  return res.data;
+};
+
+export const updateGroup = async (groupId, groupData) => {
+  const res = await axiosInstance.put(`/groups/${groupId}`, groupData);
+  return res.data;
+};
+
+export const deleteGroup = async (groupId) => {
+  const res = await axiosInstance.delete(`/groups/${groupId}`);
+  return res.data;
+};
+
+export const addMemberToGroup = async (groupId, userId) => {
+  const res = await axiosInstance.post(`/groups/${groupId}/members`, { userId });
+  return res.data;
+};
+
+export const removeMemberFromGroup = async (groupId, userId) => {
+  const res = await axiosInstance.delete(`/groups/${groupId}/members/${userId}`);
+  return res.data;
+};
+
+export const leaveGroup = async (groupId) => {
+  const res = await axiosInstance.post(`/groups/${groupId}/leave`);
+  return res.data;
+};

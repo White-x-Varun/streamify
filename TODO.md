@@ -7,12 +7,12 @@
 - [x] Update frontend API: Add blockUser function in api.js.
 - [x] Integrate block option: In ChatOptions, call blockUser API and handle response (e.g., navigate away or show message).
 - [x] Test chat options: Ensure mute and block work correctly in the chat page.
-- [ ] Implement Group Chats: Allow users to create and manage group conversations with multiple participants, including group naming, member management (add/remove), and group avatars.
-- [ ] Add File and Media Sharing: Enable sending images, videos, documents, and voice notes. Integrate with Stream Chat's file upload capabilities and add preview functionality.
+- [x] Implement Group Chats: Allow users to create and manage group conversations with multiple participants, including group naming, member management (add/remove), and group avatars.
+- [x] Add File and Media Sharing: Enable sending images, videos, documents, and voice notes. Integrate with Stream Chat's file upload capabilities and add preview functionality.
 - [x] Implement Message Reactions and Emojis: Add emoji reactions to messages (e.g., thumbs up, heart) and a rich emoji picker for quick responses.
 - [x] Add Typing Indicators: Show when other users are typing in real-time, improving conversational flow.
 - [x] Implement Message Status Indicators: Display sent, delivered, and read receipts for messages to provide feedback on message delivery.
-- [ ] Add Message Search and History: Implement advanced search within chats (by keyword, date, or user) and pagination for message history to handle large conversations.
+- [x] Add Message Search and History: Implement advanced search within chats (by keyword, date, or user) and pagination for message history to handle large conversations.
 - [ ] Implement Message Encryption: Add end-to-end encryption for private messages to enhance security and privacy.
 - [ ] Add Message Scheduling: Allow users to schedule messages to be sent at a later time or date.
 - [ ] Integrate Screen Sharing: Integrate screen sharing during video calls using Stream Video SDK for presentations or collaborative work.
