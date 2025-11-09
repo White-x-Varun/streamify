@@ -265,3 +265,49 @@ export const getOnlineUsers = async (req, res) => {
     res.status(500).json({ message: "Internal Server Error" });
   }
 };
+
+export const blockUser = async (req, res) => {
+  try {
+    const blockerId = req.user._id;
+    const blockedId = req.params.id;
+
+    if (blockerId.toString() === blockedId) {
+      return res.status(400).json({ message: "You cannot block yourself" });
+    }
+
+    const blockedUser = await User.findById(blockedId);
+    if (!blockedUser) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    // Add to blocked list if not already blocked
+    const user = await User.findById(blockerId);
+    if (!user.blockedUsers.includes(blockedId)) {
+      user.blockedUsers.push(blockedId);
+      await user.save();
+    }
+
+    // Remove from friends if they are friends
+    if (user.friends.includes(blockedId)) {
+      user.friends = user.friends.filter(friendId => friendId.toString() !== blockedId);
+      await user.save();
+
+      await User.findByIdAndUpdate(blockedId, {
+        $pull: { friends: blockerId }
+      });
+    }
+
+    // Cancel any pending friend requests
+    await FriendRequest.deleteMany({
+      $or: [
+        { sender: blockerId, recipient: blockedId },
+        { sender: blockedId, recipient: blockerId }
+      ]
+    });
+
+    res.status(200).json({ message: "User blocked successfully" });
+  } catch (error) {
+
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+};

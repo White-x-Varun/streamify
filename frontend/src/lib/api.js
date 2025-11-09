@@ -19,7 +19,7 @@ export const getAuthUser = async () => {
       headers: { "Cache-Control": "no-cache" },
     });
     return res.data;
-  } catch (error) {
+  } catch {
 
     return null;
   }
@@ -91,5 +91,10 @@ export const updateUserStatus = async (statusData) => {
 
 export const getOnlineUsers = async () => {
   const res = await axiosInstance.get("/users/online");
+  return res.data;
+};
+
+export const blockUser = async (userId) => {
+  const res = await axiosInstance.post(`/users/block/${userId}`);
   return res.data;
 };

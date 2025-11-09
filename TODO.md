@@ -1,0 +1,9 @@
+- [x] Add home icon to Navbar.jsx: Import HomeIcon from lucide-react and add a home icon button on the left side, always visible, linking to "/".
+- [x] Make navbar responsive: Hide search and notifications icons on mobile (xs), show on sm and up. Adjust logo text size for mobile.
+- [x] Add chat options button in ChatPage.jsx: Add a button with three dots icon next to CallButton for chat options.
+- [x] Create ChatOptions component: Create a new component with dropdown menu for options like Mute, Block, etc.
+- [x] Implement mute functionality: Use Stream Chat API to mute/unmute the channel.
+- [x] Add block user API in backend: Create endpoint in user.route.js and controller to block a user.
+- [x] Update frontend API: Add blockUser function in api.js.
+- [x] Integrate block option: In ChatOptions, call blockUser API and handle response (e.g., navigate away or show message).
+- [x] Test chat options: Ensure mute and block work correctly in the chat page.

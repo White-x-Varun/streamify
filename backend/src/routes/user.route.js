@@ -11,6 +11,7 @@ import {
   updateUserProfile,
   updateUserStatus,
   getOnlineUsers,
+  blockUser,
 } from "../controllers/user.controller.js";
 const router = express.Router();
 import { protectRoute } from "../middleware/auth.middleware.js";
@@ -29,5 +30,6 @@ router.get("/profile/:id", getUserProfile);
 router.put("/profile", updateUserProfile);
 router.put("/status", updateUserStatus);
 router.get("/online", getOnlineUsers);
+router.post("/block/:id", blockUser);
 
 export default router;
