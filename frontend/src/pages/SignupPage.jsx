@@ -105,6 +105,7 @@ const SignupPage = () => {
                       setSignupData({ ...signupData, password: e.target.value })
                     }
                     required
+                    autoComplete="new-password"
                   />
                   <p className="text-xs mt-1 opacity-70">
                     Password must be at least 6 characters.

@@ -77,6 +77,7 @@ const LoginPage = () => {
                     setLoginData({ ...loginData, password: e.target.value })
                   }
                   required
+                  autoComplete="current-password"
                 />
               </div>
             </div>
