@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MoreVertical, VolumeX, Volume2, UserX } from "lucide-react";
+import { MoreVertical, VolumeX, Volume2, UserX, Pin, PinOff } from "lucide-react";
 import toast from "react-hot-toast";
 
 const ChatOptions = ({ channel, targetUserId, onBlock }) => {

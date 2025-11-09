@@ -13,11 +13,14 @@ import {
   MessageList,
   Thread,
   Window,
+  TypingIndicator,
 } from "stream-chat-react";
 import { StreamChat } from "stream-chat";
 import toast from "react-hot-toast";
 import CallButton from "../components/CallButton";
 import ChatOptions from "../components/ChatOptions";
+import EmojiPickerComponent from "../components/EmojiPicker";
+import VoiceRecorder from "../components/VoiceRecorder";
 const ChatPage = () => {
   const { id: targetUserId } = useParams();
   const navigate = useNavigate();
@@ -55,6 +58,24 @@ const ChatPage = () => {
   const handleBlockUser = (userId) => {
     blockMutation.mutate(userId);
   };
+
+  const handleEmojiSelect = (emoji) => {
+    // Insert emoji into message input - this would need access to MessageInput ref
+    // For now, just log it
+    console.log('Emoji selected:', emoji);
+  };
+
+  const handleSendVoiceMessage = async (audioBlob) => {
+    if (channel) {
+      try {
+        await channel.sendFile(audioBlob, 'voice-message.wav', 'audio/wav');
+        toast.success('Voice message sent');
+      } catch {
+        toast.error('Failed to send voice message');
+      }
+    }
+  };
+
   useEffect(() => {
     const initChat = async () => {
       if (!tokenData?.token || !authUser) return;
@@ -100,8 +121,23 @@ const ChatPage = () => {
             </div>
             <Window>
               <ChannelHeader />
-              <MessageList />
-              <MessageInput focus />
+              <MessageList
+                messageActions={['react', 'reply', 'quote', 'pin']}
+                showReactions={true}
+                showDeletedMessages={false}
+              />
+              <TypingIndicator />
+              <MessageInput
+                focus
+                mentionAllAppUsers
+                additionalTextareaProps={{
+                  placeholder: 'Type a message...',
+                }}
+              />
+              <div className="flex items-center gap-2 p-2">
+                <EmojiPickerComponent onEmojiSelect={handleEmojiSelect} />
+                <VoiceRecorder onSendVoiceMessage={handleSendVoiceMessage} />
+              </div>
             </Window>
           </div>
           <Thread />

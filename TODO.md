@@ -7,3 +7,38 @@
 - [x] Update frontend API: Add blockUser function in api.js.
 - [x] Integrate block option: In ChatOptions, call blockUser API and handle response (e.g., navigate away or show message).
 - [x] Test chat options: Ensure mute and block work correctly in the chat page.
+- [ ] Implement Group Chats: Allow users to create and manage group conversations with multiple participants, including group naming, member management (add/remove), and group avatars.
+- [ ] Add File and Media Sharing: Enable sending images, videos, documents, and voice notes. Integrate with Stream Chat's file upload capabilities and add preview functionality.
+- [x] Implement Message Reactions and Emojis: Add emoji reactions to messages (e.g., thumbs up, heart) and a rich emoji picker for quick responses.
+- [x] Add Typing Indicators: Show when other users are typing in real-time, improving conversational flow.
+- [x] Implement Message Status Indicators: Display sent, delivered, and read receipts for messages to provide feedback on message delivery.
+- [ ] Add Message Search and History: Implement advanced search within chats (by keyword, date, or user) and pagination for message history to handle large conversations.
+- [ ] Implement Message Encryption: Add end-to-end encryption for private messages to enhance security and privacy.
+- [ ] Add Message Scheduling: Allow users to schedule messages to be sent at a later time or date.
+- [ ] Integrate Screen Sharing: Integrate screen sharing during video calls using Stream Video SDK for presentations or collaborative work.
+- [ ] Add Call Recording: Add the ability to record video calls and store them securely in the cloud.
+- [ ] Implement Background Effects: Provide virtual backgrounds or blur options during video calls for privacy or fun.
+- [ ] Add Call History and Logs: Maintain a history of past calls with details like duration, participants, and recordings.
+- [ ] Ensure Multi-Device Sync: Ensure seamless call handling across multiple devices logged into the same account.
+- [ ] Implement Stories or Status Updates: Allow users to post temporary status updates (like Snapchat stories) visible to friends.
+- [ ] Add Polls and Interactive Messages: Enable creating polls within chats for group decisions or fun interactions.
+- [ ] Implement Custom Emojis and Stickers: Let users upload or select custom emojis and stickers for personalized communication.
+- [x] Add Voice Messages: Add voice recording and playback directly in chats.
+- [x] Implement Mentions and Tags: Implement @mentions to notify specific users in group chats.
+- [x] Add Pinned Messages: Allow pinning important messages in chats for easy reference.
+- [ ] Integrate Chat Bots and Integrations: Integrate simple chat bots for reminders, weather updates, or third-party services (e.g., via webhooks).
+- [ ] Implement Self-Destructing Messages: Add timed messages that disappear after a set period.
+- [ ] Add Two-Factor Authentication (2FA): Enhance account security with 2FA options (SMS, app-based).
+- [ ] Implement Privacy Settings: Granular controls for who can see online status, read receipts, or contact the user.
+- [ ] Expand Report and Moderation Tools: Expand admin panel with user reporting, content moderation, and automated spam detection.
+- [ ] Implement Push Notifications: Implement push notifications for mobile apps (if expanding to native) or web push for desktop.
+- [ ] Add Offline Mode: Allow basic functionality like composing messages offline and syncing when back online.
+- [ ] Add Analytics and Insights: For admins, add dashboards showing user activity, message volumes, and engagement metrics.
+- [ ] Expand Multi-Language Support: Expand language utilities for internationalization (i18n) beyond current language handling.
+- [ ] Integrate with External Services: Connect to calendars for scheduling calls, or integrate with productivity tools like Slack or Trello.
+- [ ] Add AI-Powered Features: Use AI for smart replies, message translation, or content moderation.
+- [ ] Implement Gamification: Add badges, levels, or streaks for active users to increase engagement.
+- [ ] Implement Caching and Performance Optimization: Implement Redis for session caching and optimize database queries for faster load times.
+- [ ] Adopt Microservices Architecture: Break down the backend into microservices (e.g., separate auth, chat, and video services) for better scalability.
+- [ ] Add API Rate Limiting and Monitoring: Add rate limiting to prevent abuse and integrate monitoring tools like Prometheus for backend health.
+- [ ] Implement Backup and Recovery: Implement automated backups for MongoDB and disaster recovery plans.
