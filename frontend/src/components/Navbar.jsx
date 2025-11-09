@@ -3,7 +3,7 @@ import useAuthUser from "../hooks/useAuthUser";
 import { useLocation } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import { logout } from "../lib/api";
-import { BellIcon, LogOutIcon, SearchIcon, UserIcon, Shield } from "lucide-react";
+import { BellIcon, HomeIcon, LogOutIcon, SearchIcon, UserIcon, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ShipWheelIcon } from "lucide-react";
 import { useQueryClient } from "@tanstack/react-query";
@@ -26,9 +26,14 @@ const Navbar = () => {
   return (
     <nav className="bg-base-200 border-b border-base-300 sticky top-0 z-30 h-16 flex items-center px-4 sm:px-6 lg:px-8">
       <div className="flex items-center w-full">
+        {/* Left (home icon always visible) */}
+        <Link to="/" className="btn btn-ghost" title="Home">
+          <HomeIcon className="h-6 w-6" />
+        </Link>
+
         {/* Left (only shows on chat page) */}
         {isChatpage && (
-          <Link to="/" className="flex items-center gap-2.5">
+          <Link to="/" className="flex items-center gap-2.5 ml-4">
             <ShipWheelIcon className="size-9 text-primary " />
             <span className="text-3xl font-bold font-mono bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary tracking-wider">
               Streamify
