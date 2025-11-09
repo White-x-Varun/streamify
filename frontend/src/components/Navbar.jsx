@@ -35,7 +35,7 @@ const Navbar = () => {
         {isChatpage && (
           <Link to="/" className="flex items-center gap-2.5 ml-4">
             <ShipWheelIcon className="size-9 text-primary " />
-            <span className="text-3xl font-bold font-mono bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary tracking-wider">
+            <span className="text-xl sm:text-3xl font-bold font-mono bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary tracking-wider">
               Streamify
             </span>
           </Link>
@@ -43,7 +43,7 @@ const Navbar = () => {
 
         {/* Right (always aligned to end) */}
         <div className="flex items-center gap-3 sm:gap-4 ml-auto">
-          <Link to="/search">
+          <Link to="/search" className="hidden sm:flex">
             <button
               className="btn btn-ghost"
               title="Search Users"
@@ -52,7 +52,7 @@ const Navbar = () => {
             </button>
           </Link>
 
-          <Link to="/notifications">
+          <Link to="/notifications" className="hidden sm:flex">
             <button
               className="btn btn-ghost"
               title="Notifications"
